@@ -932,3 +932,22 @@ body.cursor-ready .cursor-dot,body.cursor-ready .cursor-ring{opacity:1}
   }
   .vibe-video-section{border-top-width:14px}
 }
+
+
+/* V5 — hide the browser cursor whenever the custom interactive cursor is active */
+@media (pointer:fine){
+  body.cursor-ready,
+  body.cursor-ready *,
+  body.cursor-ready *::before,
+  body.cursor-ready *::after{
+    cursor:none!important;
+  }
+}
+
+/* Keep normal system cursor on touch/coarse-pointer devices. */
+@media (pointer:coarse){
+  body,
+  body *{
+    cursor:auto!important;
+  }
+}
