@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blue Heaven Goa — Restaurant & Bar</title>
+  <meta name="description" content="Blue Heaven Restaurant & Bar in Goa — authentic Goan food, fresh seafood, live music and sports vibes."/>
+  <link rel="icon" href="assets/fav.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="brand" aria-label="Blue Heaven home">
+        <img src="assets/logo-transparent.png" alt="Blue Heaven Restaurant & Bar Goa"/>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#story">Our Story</a>
+        <a href="#specials">Specials</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#experience">Experience</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <button class="booking-link" data-book>Booking</button>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-shade"></div>
+      <div class="goan-corner goan-corner-a"></div>
+      <div class="goan-corner goan-corner-b"></div>
+      <div class="hero-content">
+        <span class="eyebrow light">Heart of Margao · Goa</span>
+        <h1>Goan flavours.<br/>Good times.</h1>
+        <p>Authentic Goan food, fresh seafood, live music and sports vibes — just minutes from Colva Beach.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#menu">Explore Menu</a>
+          <button class="btn btn-outline" data-book>Reserve a Table</button>
+        </div>
+        <div class="hero-meta">
+          <span>11 AM–4 PM · 7 PM–12 AM</span>
+          <i></i>
+          <span>Closed on Wednesdays</span>
+        </div>
+      </div>
+      <a href="#story" class="scroll-cue" aria-label="Scroll to story"><span></span></a>
+    </section>
+
+    <div class="goan-band" aria-hidden="true"></div>
+
+    <section class="section story" id="story">
+      <div class="section-title reveal">
+        <span class="eyebrow">Welcome to Blue Heaven</span>
+        <h2>A local favourite for authentic Goan flavours.</h2>
+        <p>Blue Heaven brings together soul-satisfying thalis, perfectly spiced seafood and the warmth of Goan hospitality.</p>
+        <i></i>
+      </div>
+      <div class="story-grid">
+        <figure class="photo-card reveal"><img src="assets/place-02.jpg" alt="Blue Heaven dining space"/></figure>
+        <figure class="photo-card reveal delay-1"><img src="assets/place-03.jpg" alt="Blue Heaven restaurant interior"/></figure>
+      </div>
+      <div class="story-note reveal">
+        <p>Dive into the richness of Goan cuisine with our signature <strong>Bhatkar Thali</strong> and daily fresh-catch specials.</p>
+        <span>Since 2000</span>
+      </div>
+    </section>
+
+    <section class="section blue-soft" id="specials">
+      <div class="section-title reveal">
+        <span class="eyebrow">Fresh from the Goan Kitchen</span>
+        <h2>Blue Heaven Specials</h2>
+        <p>Signature favourites, coastal classics and crowd-pleasers. Click any card to explore the dish.</p>
+        <i></i>
+      </div>
+
+      <div class="slider-shell reveal">
+        <button class="slider-arrow prev" data-special-prev aria-label="Previous specials">←</button>
+        <div class="special-viewport">
+          <div class="special-track" id="specialTrack">
+            <button class="special-card" data-item="Bhatkar Thali|A hearty Goan thali packed with comforting local flavours and the feeling of a proper home-style meal.|assets/dish-01.jpg">
+              <img src="assets/dish-01.jpg" alt=""><span class="tag">Signature</span><h3>Bhatkar Thali</h3><p>Goan comfort on one plate</p>
+            </button>
+            <button class="special-card" data-item="Butter Squids|Tender squid in a rich buttery Goan-style preparation.|assets/dish-02.jpg">
+              <img src="assets/dish-02.jpg" alt=""><span class="tag">Popular</span><h3>Butter Squids</h3><p>Rich · buttery · tender</p>
+            </button>
+            <button class="special-card" data-item="Chicken Cafreal|Goan-style chicken packed with herbs, spice and bold green masala flavours.|assets/dish-03.jpg">
+              <img src="assets/dish-03.jpg" alt=""><span class="tag">Goan Favourite</span><h3>Chicken Cafreal</h3><p>Herbs · spice · Goa</p>
+            </button>
+
+            <button class="special-card" data-item="Fish Curry Rice|Classic Goan fish curry served with fragrant rice — simple, comforting and unmistakably coastal.|assets/dish-04.jpg">
+              <img src="assets/dish-04.jpg" alt=""><span class="tag">Classic</span><h3>Fish Curry Rice</h3><p>Coastal comfort</p>
+            </button>
+            <button class="special-card" data-item="Chicken Xacuti|Slow-cooked chicken in a rich roasted-spice gravy.|assets/dish-05.jpg">
+              <img src="assets/dish-05.jpg" alt=""><span class="tag">Mains</span><h3>Chicken Xacuti</h3><p>Roasted spice · slow cooked</p>
+            </button>
+            <button class="special-card" data-item="Pork Sorpotel|Traditional Goan pork preparation with deep spice and a bold, tangy finish.|assets/dish-06.jpg">
+              <img src="assets/dish-06.jpg" alt=""><span class="tag">Traditional</span><h3>Pork Sorpotel</h3><p>Deep spice · Goan tradition</p>
+            </button>
+
+            <button class="special-card" data-item="Prawn Curry|Juicy prawns cooked in a fragrant coastal curry.|assets/dish-07.jpg">
+              <img src="assets/dish-07.jpg" alt=""><span class="tag">Seafood</span><h3>Prawn Curry</h3><p>Fresh · coastal · fragrant</p>
+            </button>
+            <button class="special-card" data-item="Fish Fry|Fresh fish marinated with Goan spices and pan fried.|assets/dish-08.jpg">
+              <img src="assets/dish-08.jpg" alt=""><span class="tag">Fresh Catch</span><h3>Fish Fry</h3><p>Goan spice · pan fried</p>
+            </button>
+            <button class="special-card" data-item="Fresh Lime Soda|Refreshing lime, soda and a touch of sweetness — made for warm Goan afternoons.|assets/dish-09.jpg">
+              <img src="assets/dish-09.jpg" alt=""><span class="tag">Refresh</span><h3>Fresh Lime Soda</h3><p>Cool · citrus · easy</p>
+            </button>
+          </div>
+        </div>
+        <button class="slider-arrow next" data-special-next aria-label="Next specials">→</button>
+        <div class="special-dots" id="specialDots"></div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-title reveal">
+        <span class="eyebrow">Goan food, done right.</span>
+        <h2>Popular Dishes</h2>
+        <p>From seafood classics to comforting favourites and refreshing drinks.</p>
+        <i></i>
+      </div>
+
+      <div class="menu-grid reveal">
+        <div class="menu-column">
+          <button class="menu-item" data-item="Butter Squids|Tender squid cooked in a rich buttery preparation.|assets/dish-02.jpg"><img src="assets/dish-02.jpg"><span><b>Butter Squids</b><small>Popular · Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Chicken Cafreal|A Goan favourite with fresh herbs and bold spices.|assets/dish-03.jpg"><img src="assets/dish-03.jpg"><span><b>Chicken Cafreal</b><small>Mains · Goan Favourite</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Fish Curry Rice|Coastal fish curry served with steamed rice.|assets/dish-04.jpg"><img src="assets/dish-04.jpg"><span><b>Fish Curry Rice</b><small>Popular · Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Chicken Xacuti|Slow-cooked chicken in a rich roasted-spice gravy.|assets/dish-05.jpg"><img src="assets/dish-05.jpg"><span><b>Chicken Xacuti</b><small>Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Pork Sorpotel|Traditional Goan pork preparation with deep spices.|assets/dish-06.jpg"><img src="assets/dish-06.jpg"><span><b>Pork Sorpotel</b><small>Mains · Traditional</small></span><em>→</em></button>
+        </div>
+        <div class="menu-column">
+          <button class="menu-item" data-item="Crispy Paneer|Golden paneer with crunchy exterior and house seasoning.|assets/dish-10.jpg"><img src="assets/dish-10.jpg"><span><b>Crispy Paneer</b><small>Vegetarian · Starter</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Goan Vegetable Curry|Seasonal vegetables in a fragrant coconut-based curry.|assets/dish-11.jpg"><img src="assets/dish-11.jpg"><span><b>Goan Vegetable Curry</b><small>Vegetarian · Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Calamari|Lightly seasoned squid served crisp and tender.|assets/dish-12.jpg"><img src="assets/dish-12.jpg"><span><b>Calamari</b><small>Starter · Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Prawn Curry|Juicy prawns cooked in a fragrant coastal curry.|assets/dish-07.jpg"><img src="assets/dish-07.jpg"><span><b>Prawn Curry</b><small>Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Masala Fries|Crispy fries finished with a house masala.|assets/dish-08.jpg"><img src="assets/dish-08.jpg"><span><b>Masala Fries</b><small>Vegetarian · Starter</small></span><em>→</em></button>
+        </div>
+      </div>
+      <button class="btn btn-dark reveal" id="fullMenuButton">View Full Menu</button>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-copy reveal">
+        <span class="eyebrow">Photos</span>
+        <h2>A little slice of Blue Heaven.</h2>
+        <p>Food, friends, music and the easy-going atmosphere that keeps people coming back.</p>
+        <i></i>
+        <button class="btn btn-dark" id="galleryButton">View Gallery</button>
+      </div>
+      <div class="gallery-grid">
+        <button data-gallery="assets/place-01.jpg"><img src="assets/place-01.jpg" alt="Blue Heaven bar and dining space"></button>
+        <button data-gallery="assets/place-04.jpg"><img src="assets/place-04.jpg" alt="Blue Heaven open-air seating"></button>
+        <button data-gallery="assets/place-05.jpg"><img src="assets/place-05.jpg" alt="Blue Heaven interior"></button>
+        <button data-gallery="assets/FL-40.jpg"><img src="assets/FL-40.jpg" alt="Guests enjoying an evening at Blue Heaven"></button>
+        <button data-gallery="assets/FL-34.jpg"><img src="assets/FL-34.jpg" alt="Drinks at Blue Heaven"></button>
+        <button data-gallery="assets/gallery2.jpg"><img src="assets/gallery2.jpg" alt="Sports night at Blue Heaven"></button>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="section-title reveal">
+        <span class="eyebrow">The Blue Heaven Experience</span>
+        <h2>More than a meal. A vibe.</h2>
+        <p>Freshly ground spices, a lively room and the joy of sharing a great meal with friends and family.</p>
+        <i></i>
+      </div>
+      <div class="feature-grid">
+        <article class="reveal"><span>✦</span><h3>Authentic Goan Food</h3><p>Traditional flavours, comforting classics and dishes that feel rooted in Goa.</p></article>
+        <article class="reveal delay-1"><span>≈</span><h3>Daily Fresh Catch</h3><p>Fresh seafood and coastal favourites prepared with bold local spice.</p></article>
+        <article class="reveal delay-2"><span>♫</span><h3>Live Music</h3><p>Easy-going evenings with food, drinks and a little more energy in the room.</p></article>
+        <article class="reveal delay-3"><span>◉</span><h3>Sports Vibes</h3><p>A comfortable place to catch the game with your crew and something good on the table.</p></article>
+      </div>
+    </section>
+
+    <section class="review-slider" id="reviews" aria-label="Guest reviews">
+      <div class="review-bg review-bg-a active" id="reviewBgA"></div>
+      <div class="review-bg review-bg-b" id="reviewBgB"></div>
+      <div class="review-shade"></div>
+      <button class="quote-arrow quote-prev" aria-label="Previous review">←</button>
+      <div class="quote-wrap">
+        <span class="eyebrow light">Guest Reviews</span>
+        <blockquote id="quoteText"></blockquote>
+        <cite id="quoteAuthor"></cite>
+        <div class="quote-dots" id="quoteDots"></div>
+      </div>
+      <button class="quote-arrow quote-next" aria-label="Next review">→</button>
+    </section>
+
+    <section class="vibe-video-section" id="story-video">
+      <video class="vibe-bg-video" autoplay muted loop playsinline poster="assets/place-01.jpg">
+        <source src="assets/IMG_4564.mp4" type="video/mp4"/>
+      </video>
+      <div class="vibe-video-overlay"></div>
+      <div class="vibe-video-content reveal">
+        <span class="eyebrow light">Since 2000</span>
+        <h2>Where every table has a story.</h2>
+        <p>For more than two decades, Blue Heaven has been a place for great food, good company and unforgettable Goan moments.</p>
+        <i></i>
+
+        <div class="stats" id="statsCounters">
+          <div>
+            <strong class="counter" data-target="15" data-suffix="+">0+</strong>
+            <span>Years of Tradition</span>
+          </div>
+          <div>
+            <strong class="counter" data-target="50" data-suffix="K+">0K+</strong>
+            <span>Happy Customers</span>
+          </div>
+          <div>
+            <strong class="counter" data-target="100" data-suffix="+">0+</strong>
+            <span>Goan Dishes</span>
+          </div>
+        </div>
+
+        <button class="btn btn-light" data-book>Book Your Table</button>
+      </div>
+    </section>
+
+    <section class="section goan-favourites" id="favourites">
+      <div class="section-title reveal">
+        <span class="eyebrow">From the Goan Kitchen</span>
+        <h2>What to try at Blue Heaven</h2>
+        <p>An editorial-style selection of the dishes and experiences people come here for.</p>
+        <i></i>
+      </div>
+
+      <div class="favourites-masonry">
+        <div class="favourite-column">
+          <article class="favourite-card short reveal">
+            <img src="assets/thali.jpg" alt="Bhatkar Thali">
+            <h3>Bhatkar Thali</h3>
+            <p>A hearty Goan spread and one of Blue Heaven’s signatures.</p>
+            <button class="text-link" data-item="Bhatkar Thali|A soul-satisfying thali packed with comforting local flavours — the kind of plate that feels like a proper Goan meal.|assets/thali.jpg">Discover Dish</button>
+          </article>
+          <article class="favourite-card deep extra">
+            <img src="assets/place-06.jpg" alt="Blue Heaven celebration">
+            <h3>Celebrate at Blue Heaven</h3>
+            <p>Birthdays, family gatherings, anniversaries and group dining.</p>
+            <button class="text-link" data-item="Celebrate at Blue Heaven|Bring your favourite people together over great food, refreshing drinks and memorable Goan moments.|assets/place-06.jpg">Explore</button>
+          </article>
+        </div>
+
+        <div class="favourite-column">
+          <article class="favourite-card tall reveal delay-1">
+            <img src="assets/buttersquids2.jpg" alt="Butter Squids">
+            <h3>Butter Squids</h3>
+            <p>Tender squid in a rich buttery Goan-style preparation.</p>
+            <button class="text-link" data-item="Butter Squids|Tender squid in a rich buttery preparation — a Blue Heaven favourite for seafood lovers.|assets/buttersquids2.jpg">Discover Dish</button>
+          </article>
+          <article class="favourite-card short extra">
+            <img src="assets/place-08.jpg" alt="Sports night">
+            <h3>Music & Sports Evenings</h3>
+            <p>Good food, drinks and a lively atmosphere after dark.</p>
+            <button class="text-link" data-item="Music & Sports Evenings|Settle in with your group, order the table a few favourites and enjoy Blue Heaven’s relaxed evening atmosphere.|assets/place-08.jpg">Explore</button>
+          </article>
+        </div>
+
+        <div class="favourite-column">
+          <article class="favourite-card short reveal delay-2">
+            <img src="assets/FL-4.jpg" alt="Food and drink at Blue Heaven">
+            <h3>Fresh Catch & Drinks</h3>
+            <p>Coastal favourites and something chilled on the side.</p>
+            <button class="text-link" data-item="Fresh Catch & Drinks|Daily seafood specials bring the coast to the table, paired with refreshing drinks for an easy Goan meal.|assets/FL-4.jpg">Discover</button>
+          </article>
+          <article class="favourite-card deep extra">
+            <img src="assets/place-04.jpg" alt="Blue Heaven dining">
+            <h3>Family & Group Dining</h3>
+            <p>A relaxed room for long lunches, dinners and get-togethers.</p>
+            <button class="text-link" data-item="Family & Group Dining|Blue Heaven is built for shared tables, family dinners and casual celebrations with your whole crew.|assets/place-04.jpg">Explore</button>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="visit-section" id="visit">
+      <div class="visit-copy reveal">
+        <span class="eyebrow">Find Us & Book</span>
+        <h2>Come visit Blue Heaven.</h2>
+        <p>Located in Margao, Goa, just minutes from Colva Beach.</p>
+        <div class="visit-info">
+          <div><span>When to visit</span><strong>Mon, Tue & Thu–Sun</strong><p>11:00 AM – 4:00 PM<br/>7:00 PM – 12:00 AM</p></div>
+          <div><span>Weekly closing</span><strong>Wednesday</strong><p>Closed</p></div>
+        </div>
+        <div class="visit-actions">
+          <a class="btn btn-dark" href="https://maps.app.goo.gl/ya1LvcmdPSd3VtXy7" target="_blank" rel="noopener">Get Directions</a>
+          <button class="btn btn-outline-blue" data-book>Reserve a Table</button>
+        </div>
+      </div>
+      <div class="visit-map reveal delay-1">
+        <iframe
+          class="visit-map-frame"
+          title="Blue Heaven Restaurant & Bar location"
+          src="https://maps.google.com/maps?q=Blue%20Heaven%20Restaurant%20%26%20Bar%20Margao%20Goa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-wave"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-card"><img src="assets/logo-transparent.png" alt="Blue Heaven Goa"></div>
+        <p>Heart of Margao · Authentic Goan flavours · Live music · Sports vibes</p>
+      </div>
+      <div><h4>Quick Links</h4><a href="#story">About Us</a><a href="#menu">Our Menu</a><a href="#gallery">Gallery</a><button data-book>Reservation</button></div>
+      <div><h4>Visit Us</h4><p>Margao, Goa · 10 min from Colva Beach</p><p>11 AM–4 PM · 7 PM–12 AM</p><p>Closed on Wednesdays</p></div>
+      <div><h4>Connect</h4><a href="https://www.instagram.com/blueheavengoa" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/9028910022" target="_blank" rel="noopener">WhatsApp</a><a href="https://maps.app.goo.gl/ya1LvcmdPSd3VtXy7" target="_blank" rel="noopener">Google Maps</a></div>
+    </div>
+    <div class="footer-bottom"><span>© Blue Heaven Restaurant & Bar, Goa.</span><span>Authentic Goan food. Good times.</span></div>
+  </footer>
+
+  <button class="to-top" aria-label="Back to top">↑</button>
+
+  <div class="modal" id="contentModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal>×</button>
+      <img id="modalImage" src="" alt="">
+      <span class="eyebrow" id="modalEyebrow">Blue Heaven</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalBody"></p>
+      <button class="btn btn-dark" data-close-modal>Close</button>
+    </div>
+  </div>
+
+  <div class="modal" id="menuModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-menu></div>
+    <div class="modal-box menu-modal-box">
+      <button class="modal-close" data-close-menu>×</button>
+      <span class="eyebrow">Our Menu</span>
+      <h2>Goan food, done right.</h2>
+      <div class="menu-tabs" id="menuTabs">
+        <button class="active" data-category="all">All</button>
+        <button data-category="popular">Popular</button>
+        <button data-category="mains">Mains</button>
+        <button data-category="vegetarian">Vegetarian</button>
+        <button data-category="starters">Starters</button>
+        <button data-category="seafood">Seafood</button>
+        <button data-category="drinks">Drinks</button>
+      </div>
+      <div class="full-menu-grid" id="fullMenuGrid"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-booking></div>
+    <div class="modal-box booking-box">
+      <button class="modal-close" data-close-booking>×</button>
+      <span class="eyebrow">Reserve Your Table</span>
+      <h2>Let’s save you a seat.</h2>
+      <p>Reservations are confirmed through WhatsApp. Your booking details will be prepared automatically.</p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <input required name="name" placeholder="Your Name">
+          <input required name="phone" placeholder="Phone">
+          <input required name="date" type="date">
+          <input required name="time" type="time">
+          <select name="guests"><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option></select>
+          <input name="email" type="email" placeholder="Email (optional)">
+        </div>
+        <textarea name="note" placeholder="Special request"></textarea>
+        <button class="btn btn-dark" type="submit">Continue with WhatsApp</button>
+        <p class="form-status"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox"><button class="lightbox-close">×</button><img alt="Blue Heaven gallery image"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
