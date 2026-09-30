@@ -959,7 +959,7 @@ body.cursor-ready .cursor-dot,body.cursor-ready .cursor-ring{opacity:1}
 
 /* Optimized hero sources */
 .hero-bg{
-  background-image:url("assets/hero-desktop.png");
+  background-image:url("assets/hero-desktop.webp");
 }
 
 /* Mobile navigation CTA is hidden on desktop. */
