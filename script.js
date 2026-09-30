@@ -29,7 +29,7 @@ $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
   if(target){
     e.preventDefault();
     target.scrollIntoView({behavior:'smooth'});
-    $('.nav').classList.remove('mobile-open');
+    setMobileMenu(false);
   }
 }));
 
@@ -43,7 +43,27 @@ const spy=new IntersectionObserver(entries=>{
 },{rootMargin:'-45% 0px -45% 0px'});
 $$('section[id]').forEach(s=>spy.observe(s));
 
-$('.menu-toggle').addEventListener('click',()=>$('.nav').classList.toggle('mobile-open'));
+const menuToggle=$('.menu-toggle');
+const siteNav=$('#siteNav');
+
+function setMobileMenu(open){
+  siteNav.classList.toggle('mobile-open',open);
+  menuToggle.classList.toggle('is-open',open);
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  document.body.classList.toggle('menu-open',open);
+
+  if(open){
+    siteNav.scrollTop=0;
+    requestAnimationFrame(()=>{
+      const firstLink=siteNav.querySelector('a');
+      if(firstLink) firstLink.focus({preventScroll:true});
+    });
+  }else if(document.activeElement && siteNav.contains(document.activeElement)){
+    menuToggle.focus({preventScroll:true});
+  }
+}
+menuToggle.addEventListener('click',()=>setMobileMenu(!siteNav.classList.contains('mobile-open')));
 
 /* ----------------------------
    Content modal
@@ -54,6 +74,10 @@ const modalTitle=$('#modalTitle');
 const modalBody=$('#modalBody');
 const modalEyebrow=$('#modalEyebrow');
 
+function syncModalLock(){
+  document.body.classList.toggle('modal-open',Boolean($('.modal.open')));
+}
+
 function openContent(title,body,img,eyebrow='Blue Heaven'){
   modalTitle.textContent=title;
   modalBody.textContent=body;
@@ -61,10 +85,12 @@ function openContent(title,body,img,eyebrow='Blue Heaven'){
   modalEyebrow.textContent=eyebrow;
   contentModal.classList.add('open');
   contentModal.setAttribute('aria-hidden','false');
+  syncModalLock();
 }
 function closeContent(){
   contentModal.classList.remove('open');
   contentModal.setAttribute('aria-hidden','true');
+  syncModalLock();
 }
 function bindDataItems(root=document){
   $$('[data-item]',root).forEach(el=>{
@@ -81,14 +107,18 @@ $$('[data-close-modal]').forEach(el=>el.addEventListener('click',closeContent));
 
 /* ----------------------------
    Specials slider
+   Desktop: 3-card grouped slider
+   Mobile/tablet: native swipe + scroll snap
 ----------------------------- */
 const specialTrack=$('#specialTrack');
 const specialViewport=$('.special-viewport');
 const specialCards=$$('.special-card');
 const specialDots=$('#specialDots');
 let specialPage=0;
+let specialScrollTimer;
 
-function specialsPerPage(){return innerWidth<=980?1:3}
+function isTouchSlider(){return innerWidth<=980}
+function specialsPerPage(){return isTouchSlider()?1:3}
 function specialsPages(){return Math.ceil(specialCards.length/specialsPerPage())}
 
 function buildSpecialDots(){
@@ -101,20 +131,48 @@ function buildSpecialDots(){
   }
 }
 
-function goSpecial(page){
+function setSpecialDot(page){
+  $$('#specialDots button').forEach((d,i)=>d.classList.toggle('active',i===page));
+}
+
+function goSpecial(page,behavior='smooth'){
   const pages=specialsPages();
   specialPage=(page+pages)%pages;
   const firstIndex=specialPage*specialsPerPage();
   const card=specialCards[firstIndex];
-  const x=card?card.offsetLeft:0;
-  specialTrack.style.transform=`translateX(${-x}px)`;
-  $$('#specialDots button').forEach((d,i)=>d.classList.toggle('active',i===specialPage));
+  if(!card) return;
+
+  if(isTouchSlider()){
+    specialTrack.style.transform='none';
+    const left=card.offsetLeft - specialTrack.offsetLeft;
+    specialViewport.scrollTo({left,behavior});
+  }else{
+    specialViewport.scrollLeft=0;
+    specialTrack.style.transform=`translateX(${-card.offsetLeft}px)`;
+  }
+  setSpecialDot(specialPage);
 }
+
+specialViewport.addEventListener('scroll',()=>{
+  if(!isTouchSlider()) return;
+  clearTimeout(specialScrollTimer);
+  specialScrollTimer=setTimeout(()=>{
+    const viewportLeft=specialViewport.scrollLeft;
+    let closest=0;
+    let best=Infinity;
+    specialCards.forEach((card,i)=>{
+      const dist=Math.abs((card.offsetLeft-specialTrack.offsetLeft)-viewportLeft);
+      if(dist<best){best=dist;closest=i}
+    });
+    specialPage=closest;
+    setSpecialDot(specialPage);
+  },80);
+},{passive:true});
 
 $('[data-special-prev]').addEventListener('click',()=>goSpecial(specialPage-1));
 $('[data-special-next]').addEventListener('click',()=>goSpecial(specialPage+1));
 buildSpecialDots();
-goSpecial(0);
+goSpecial(0,'auto');
 
 let resizeTimer;
 addEventListener('resize',()=>{
@@ -122,16 +180,21 @@ addEventListener('resize',()=>{
   resizeTimer=setTimeout(()=>{
     specialPage=0;
     buildSpecialDots();
-    goSpecial(0);
-  },130);
+    goSpecial(0,'auto');
+  },160);
 });
 
-let specialAuto=setInterval(()=>goSpecial(specialPage+1),6200);
-$('.slider-shell').addEventListener('mouseenter',()=>clearInterval(specialAuto));
-$('.slider-shell').addEventListener('mouseleave',()=>{
+let specialAuto;
+function startSpecialAuto(){
   clearInterval(specialAuto);
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   specialAuto=setInterval(()=>goSpecial(specialPage+1),6200);
-});
+}
+startSpecialAuto();
+$('.slider-shell').addEventListener('mouseenter',()=>clearInterval(specialAuto));
+$('.slider-shell').addEventListener('mouseleave',startSpecialAuto);
+specialViewport.addEventListener('touchstart',()=>clearInterval(specialAuto),{passive:true});
+specialViewport.addEventListener('touchend',startSpecialAuto,{passive:true});
 
 /* ----------------------------
    Full menu modal
@@ -198,10 +261,12 @@ function openMenu(){
   menuModal.classList.add('open');
   menuModal.setAttribute('aria-hidden','false');
   renderFullMenu();
+  syncModalLock();
 }
 function closeMenu(){
   menuModal.classList.remove('open');
   menuModal.setAttribute('aria-hidden','true');
+  syncModalLock();
 }
 $('#fullMenuButton').addEventListener('click',openMenu);
 $$('[data-close-menu]').forEach(el=>el.addEventListener('click',closeMenu));
@@ -303,12 +368,15 @@ lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.
 const bookingModal=$('#bookingModal');
 
 function openBooking(){
+  setMobileMenu(false);
   bookingModal.classList.add('open');
   bookingModal.setAttribute('aria-hidden','false');
+  syncModalLock();
 }
 function closeBooking(){
   bookingModal.classList.remove('open');
   bookingModal.setAttribute('aria-hidden','true');
+  syncModalLock();
 }
 $$('[data-book]').forEach(el=>el.addEventListener('click',openBooking));
 $$('[data-close-booking]').forEach(el=>el.addEventListener('click',closeBooking));
@@ -344,6 +412,32 @@ Special request: ${note}`;
 });
 
 /* ----------------------------
+   Lazy-load the background video
+----------------------------- */
+const vibeVideo=$('.vibe-bg-video');
+if(vibeVideo){
+  const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduceMotion){
+    const loadVibeVideo=()=>{
+      const source=$('source[data-src]',vibeVideo);
+      if(source){
+        source.src=source.dataset.src;
+        source.removeAttribute('data-src');
+        vibeVideo.load();
+        vibeVideo.play().catch(()=>{});
+      }
+    };
+    const videoObserver=new IntersectionObserver(entries=>{
+      if(entries.some(e=>e.isIntersecting)){
+        loadVibeVideo();
+        videoObserver.disconnect();
+      }
+    },{rootMargin:'350px 0px'});
+    videoObserver.observe(vibeVideo);
+  }
+}
+
+/* ----------------------------
    Interactive custom cursor
 ----------------------------- */
 if(matchMedia('(pointer:fine)').matches){
@@ -377,6 +471,7 @@ if(matchMedia('(pointer:fine)').matches){
 
 addEventListener('keydown',e=>{
   if(e.key==='Escape'){
+    setMobileMenu(false);
     closeContent();
     closeMenu();
     closeBooking();
@@ -430,3 +525,11 @@ if(statsSection){
   },{threshold:.45});
   counterObserver.observe(statsSection);
 }
+
+
+/* close mobile nav if viewport becomes desktop */
+addEventListener('resize',()=>{
+  if(innerWidth>980 && siteNav.classList.contains('mobile-open')){
+    setMobileMenu(false);
+  }
+},{passive:true});

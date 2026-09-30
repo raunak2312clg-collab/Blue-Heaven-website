@@ -6,6 +6,8 @@
   <title>Blue Heaven Goa — Restaurant & Bar</title>
   <meta name="description" content="Blue Heaven Restaurant & Bar in Goa — authentic Goan food, fresh seafood, live music and sports vibes."/>
   <link rel="icon" href="assets/fav.png"/>
+  <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width:650px)">
+  <link rel="preload" as="image" href="assets/hero-desktop.webp" media="(min-width:651px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
       <a href="#top" class="brand" aria-label="Blue Heaven home">
         <img src="assets/logo-transparent.png" alt="Blue Heaven Restaurant & Bar Goa"/>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
         <a href="#story">Our Story</a>
         <a href="#specials">Specials</a>
         <a href="#menu">Menu</a>
@@ -28,9 +30,10 @@
         <a href="#experience">Experience</a>
         <a href="#reviews">Reviews</a>
         <a href="#visit">Visit</a>
+        <button class="mobile-nav-booking" type="button" data-book>Reserve a Table</button>
       </nav>
       <button class="booking-link" data-book>Booking</button>
-      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span></button>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -67,8 +70,8 @@
         <i></i>
       </div>
       <div class="story-grid">
-        <figure class="photo-card reveal"><img src="assets/place-02.jpg" alt="Blue Heaven dining space"/></figure>
-        <figure class="photo-card reveal delay-1"><img src="assets/place-03.jpg" alt="Blue Heaven restaurant interior"/></figure>
+        <figure class="photo-card reveal"><img src="assets/place-02.png" alt="Blue Heaven dining space" loading="lazy" decoding="async"></figure>
+        <figure class="photo-card reveal delay-1"><img src="assets/place-03.jpg" alt="Blue Heaven restaurant interior" loading="lazy" decoding="async"></figure>
       </div>
       <div class="story-note reveal">
         <p>Dive into the richness of Goan cuisine with our signature <strong>Bhatkar Thali</strong> and daily fresh-catch specials.</p>
@@ -89,33 +92,33 @@
         <div class="special-viewport">
           <div class="special-track" id="specialTrack">
             <button class="special-card" data-item="Bhatkar Thali|A hearty Goan thali packed with comforting local flavours and the feeling of a proper home-style meal.|assets/dish-01.jpg">
-              <img src="assets/dish-01.jpg" alt=""><span class="tag">Signature</span><h3>Bhatkar Thali</h3><p>Goan comfort on one plate</p>
+              <img src="assets/dish-01.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Signature</span><h3>Bhatkar Thali</h3><p>Goan comfort on one plate</p>
             </button>
             <button class="special-card" data-item="Butter Squids|Tender squid in a rich buttery Goan-style preparation.|assets/dish-02.jpg">
-              <img src="assets/dish-02.jpg" alt=""><span class="tag">Popular</span><h3>Butter Squids</h3><p>Rich · buttery · tender</p>
+              <img src="assets/dish-02.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Popular</span><h3>Butter Squids</h3><p>Rich · buttery · tender</p>
             </button>
             <button class="special-card" data-item="Chicken Cafreal|Goan-style chicken packed with herbs, spice and bold green masala flavours.|assets/dish-03.jpg">
-              <img src="assets/dish-03.jpg" alt=""><span class="tag">Goan Favourite</span><h3>Chicken Cafreal</h3><p>Herbs · spice · Goa</p>
+              <img src="assets/dish-03.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Goan Favourite</span><h3>Chicken Cafreal</h3><p>Herbs · spice · Goa</p>
             </button>
 
             <button class="special-card" data-item="Fish Curry Rice|Classic Goan fish curry served with fragrant rice — simple, comforting and unmistakably coastal.|assets/dish-04.jpg">
-              <img src="assets/dish-04.jpg" alt=""><span class="tag">Classic</span><h3>Fish Curry Rice</h3><p>Coastal comfort</p>
+              <img src="assets/dish-04.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Classic</span><h3>Fish Curry Rice</h3><p>Coastal comfort</p>
             </button>
             <button class="special-card" data-item="Chicken Xacuti|Slow-cooked chicken in a rich roasted-spice gravy.|assets/dish-05.jpg">
-              <img src="assets/dish-05.jpg" alt=""><span class="tag">Mains</span><h3>Chicken Xacuti</h3><p>Roasted spice · slow cooked</p>
+              <img src="assets/dish-05.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Mains</span><h3>Chicken Xacuti</h3><p>Roasted spice · slow cooked</p>
             </button>
             <button class="special-card" data-item="Pork Sorpotel|Traditional Goan pork preparation with deep spice and a bold, tangy finish.|assets/dish-06.jpg">
-              <img src="assets/dish-06.jpg" alt=""><span class="tag">Traditional</span><h3>Pork Sorpotel</h3><p>Deep spice · Goan tradition</p>
+              <img src="assets/dish-06.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Traditional</span><h3>Pork Sorpotel</h3><p>Deep spice · Goan tradition</p>
             </button>
 
             <button class="special-card" data-item="Prawn Curry|Juicy prawns cooked in a fragrant coastal curry.|assets/dish-07.jpg">
-              <img src="assets/dish-07.jpg" alt=""><span class="tag">Seafood</span><h3>Prawn Curry</h3><p>Fresh · coastal · fragrant</p>
+              <img src="assets/dish-07.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Seafood</span><h3>Prawn Curry</h3><p>Fresh · coastal · fragrant</p>
             </button>
             <button class="special-card" data-item="Fish Fry|Fresh fish marinated with Goan spices and pan fried.|assets/dish-08.jpg">
-              <img src="assets/dish-08.jpg" alt=""><span class="tag">Fresh Catch</span><h3>Fish Fry</h3><p>Goan spice · pan fried</p>
+              <img src="assets/dish-08.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Fresh Catch</span><h3>Fish Fry</h3><p>Goan spice · pan fried</p>
             </button>
             <button class="special-card" data-item="Fresh Lime Soda|Refreshing lime, soda and a touch of sweetness — made for warm Goan afternoons.|assets/dish-09.jpg">
-              <img src="assets/dish-09.jpg" alt=""><span class="tag">Refresh</span><h3>Fresh Lime Soda</h3><p>Cool · citrus · easy</p>
+              <img src="assets/dish-09.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Refresh</span><h3>Fresh Lime Soda</h3><p>Cool · citrus · easy</p>
             </button>
           </div>
         </div>
@@ -134,18 +137,18 @@
 
       <div class="menu-grid reveal">
         <div class="menu-column">
-          <button class="menu-item" data-item="Butter Squids|Tender squid cooked in a rich buttery preparation.|assets/dish-02.jpg"><img src="assets/dish-02.jpg"><span><b>Butter Squids</b><small>Popular · Seafood</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Chicken Cafreal|A Goan favourite with fresh herbs and bold spices.|assets/dish-03.jpg"><img src="assets/dish-03.jpg"><span><b>Chicken Cafreal</b><small>Mains · Goan Favourite</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Fish Curry Rice|Coastal fish curry served with steamed rice.|assets/dish-04.jpg"><img src="assets/dish-04.jpg"><span><b>Fish Curry Rice</b><small>Popular · Mains</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Chicken Xacuti|Slow-cooked chicken in a rich roasted-spice gravy.|assets/dish-05.jpg"><img src="assets/dish-05.jpg"><span><b>Chicken Xacuti</b><small>Mains</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Pork Sorpotel|Traditional Goan pork preparation with deep spices.|assets/dish-06.jpg"><img src="assets/dish-06.jpg"><span><b>Pork Sorpotel</b><small>Mains · Traditional</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Butter Squids|Tender squid cooked in a rich buttery preparation.|assets/dish-02.jpg"><img src="assets/dish-02.jpg" loading="lazy" decoding="async"><span><b>Butter Squids</b><small>Popular · Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Chicken Cafreal|A Goan favourite with fresh herbs and bold spices.|assets/dish-03.jpg"><img src="assets/dish-03.jpg" loading="lazy" decoding="async"><span><b>Chicken Cafreal</b><small>Mains · Goan Favourite</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Fish Curry Rice|Coastal fish curry served with steamed rice.|assets/dish-04.jpg"><img src="assets/dish-04.jpg" loading="lazy" decoding="async"><span><b>Fish Curry Rice</b><small>Popular · Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Chicken Xacuti|Slow-cooked chicken in a rich roasted-spice gravy.|assets/dish-05.jpg"><img src="assets/dish-05.jpg" loading="lazy" decoding="async"><span><b>Chicken Xacuti</b><small>Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Pork Sorpotel|Traditional Goan pork preparation with deep spices.|assets/dish-06.jpg"><img src="assets/dish-06.jpg" loading="lazy" decoding="async"><span><b>Pork Sorpotel</b><small>Mains · Traditional</small></span><em>→</em></button>
         </div>
         <div class="menu-column">
-          <button class="menu-item" data-item="Crispy Paneer|Golden paneer with crunchy exterior and house seasoning.|assets/dish-10.jpg"><img src="assets/dish-10.jpg"><span><b>Crispy Paneer</b><small>Vegetarian · Starter</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Goan Vegetable Curry|Seasonal vegetables in a fragrant coconut-based curry.|assets/dish-11.jpg"><img src="assets/dish-11.jpg"><span><b>Goan Vegetable Curry</b><small>Vegetarian · Mains</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Calamari|Lightly seasoned squid served crisp and tender.|assets/dish-12.jpg"><img src="assets/dish-12.jpg"><span><b>Calamari</b><small>Starter · Seafood</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Prawn Curry|Juicy prawns cooked in a fragrant coastal curry.|assets/dish-07.jpg"><img src="assets/dish-07.jpg"><span><b>Prawn Curry</b><small>Seafood</small></span><em>→</em></button>
-          <button class="menu-item" data-item="Masala Fries|Crispy fries finished with a house masala.|assets/dish-08.jpg"><img src="assets/dish-08.jpg"><span><b>Masala Fries</b><small>Vegetarian · Starter</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Crispy Paneer|Golden paneer with crunchy exterior and house seasoning.|assets/dish-10.jpg"><img src="assets/dish-10.jpg" loading="lazy" decoding="async"><span><b>Crispy Paneer</b><small>Vegetarian · Starter</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Goan Vegetable Curry|Seasonal vegetables in a fragrant coconut-based curry.|assets/dish-11.jpg"><img src="assets/dish-11.jpg" loading="lazy" decoding="async"><span><b>Goan Vegetable Curry</b><small>Vegetarian · Mains</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Calamari|Lightly seasoned squid served crisp and tender.|assets/dish-12.jpg"><img src="assets/dish-12.jpg" loading="lazy" decoding="async"><span><b>Calamari</b><small>Starter · Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Prawn Curry|Juicy prawns cooked in a fragrant coastal curry.|assets/dish-07.jpg"><img src="assets/dish-07.jpg" loading="lazy" decoding="async"><span><b>Prawn Curry</b><small>Seafood</small></span><em>→</em></button>
+          <button class="menu-item" data-item="Masala Fries|Crispy fries finished with a house masala.|assets/dish-08.jpg"><img src="assets/dish-08.jpg" loading="lazy" decoding="async"><span><b>Masala Fries</b><small>Vegetarian · Starter</small></span><em>→</em></button>
         </div>
       </div>
       <button class="btn btn-dark reveal" id="fullMenuButton">View Full Menu</button>
@@ -160,12 +163,12 @@
         <button class="btn btn-dark" id="galleryButton">View Gallery</button>
       </div>
       <div class="gallery-grid">
-        <button data-gallery="assets/place-01.jpg"><img src="assets/place-01.jpg" alt="Blue Heaven bar and dining space"></button>
-        <button data-gallery="assets/place-04.jpg"><img src="assets/place-04.jpg" alt="Blue Heaven open-air seating"></button>
-        <button data-gallery="assets/place-05.jpg"><img src="assets/place-05.jpg" alt="Blue Heaven interior"></button>
-        <button data-gallery="assets/FL-40.jpg"><img src="assets/FL-40.jpg" alt="Guests enjoying an evening at Blue Heaven"></button>
-        <button data-gallery="assets/FL-34.jpg"><img src="assets/FL-34.jpg" alt="Drinks at Blue Heaven"></button>
-        <button data-gallery="assets/gallery2.jpg"><img src="assets/gallery2.jpg" alt="Sports night at Blue Heaven"></button>
+        <button data-gallery="assets/place-01.jpg"><img src="assets/place-01.jpg" alt="Blue Heaven bar and dining space" loading="lazy" decoding="async"></button>
+        <button data-gallery="assets/place-04.jpg"><img src="assets/place-04.jpg" alt="Blue Heaven open-air seating" loading="lazy" decoding="async"></button>
+        <button data-gallery="assets/place-05.jpg"><img src="assets/place-05.jpg" alt="Blue Heaven interior" loading="lazy" decoding="async"></button>
+        <button data-gallery="assets/FL-40.jpg"><img src="assets/FL-40.jpg" srcset="assets/FL-40-480.webp 480w, assets/FL-40-960.webp 960w, assets/FL-40-1440.webp 1440w" sizes="33vw" alt="Guests enjoying an evening at Blue Heaven" loading="lazy" decoding="async"></button>
+        <button data-gallery="assets/FL-34.jpg"><img src="assets/FL-34.jpg" srcset="assets/FL-34-480.webp 480w, assets/FL-34-960.webp 960w, assets/FL-34-1440.webp 1440w" sizes="33vw" alt="Drinks at Blue Heaven" loading="lazy" decoding="async"></button>
+        <button data-gallery="assets/gallery2.jpg"><img src="assets/gallery2.jpg" srcset="assets/gallery2-480.webp 480w, assets/gallery2-960.webp 960w" sizes="33vw" alt="Sports night at Blue Heaven" loading="lazy" decoding="async"></button>
       </div>
     </section>
 
@@ -199,8 +202,8 @@
     </section>
 
     <section class="vibe-video-section" id="story-video">
-      <video class="vibe-bg-video" autoplay muted loop playsinline poster="assets/place-01.jpg">
-        <source src="assets/IMG_4564.mp4" type="video/mp4"/>
+      <video class="vibe-bg-video" muted loop playsinline preload="none" poster="assets/video-poster.webp" aria-hidden="true">
+        <source data-src="assets/IMG_4564.mp4" type="video/mp4"/>
       </video>
       <div class="vibe-video-overlay"></div>
       <div class="vibe-video-content reveal">
@@ -239,13 +242,13 @@
       <div class="favourites-masonry">
         <div class="favourite-column">
           <article class="favourite-card short reveal">
-            <img src="assets/thali.jpg" alt="Bhatkar Thali">
+            <img src="assets/thali.jpg" srcset="assets/thali-480.webp 480w, assets/thali-960.webp 960w" sizes="(max-width:650px) 100vw, 33vw" alt="Bhatkar Thali" loading="lazy" decoding="async">
             <h3>Bhatkar Thali</h3>
             <p>A hearty Goan spread and one of Blue Heaven’s signatures.</p>
             <button class="text-link" data-item="Bhatkar Thali|A soul-satisfying thali packed with comforting local flavours — the kind of plate that feels like a proper Goan meal.|assets/thali.jpg">Discover Dish</button>
           </article>
           <article class="favourite-card deep extra">
-            <img src="assets/place-06.jpg" alt="Blue Heaven celebration">
+            <img src="assets/place-06.jpg" alt="Blue Heaven celebration" loading="lazy" decoding="async">
             <h3>Celebrate at Blue Heaven</h3>
             <p>Birthdays, family gatherings, anniversaries and group dining.</p>
             <button class="text-link" data-item="Celebrate at Blue Heaven|Bring your favourite people together over great food, refreshing drinks and memorable Goan moments.|assets/place-06.jpg">Explore</button>
@@ -254,13 +257,13 @@
 
         <div class="favourite-column">
           <article class="favourite-card tall reveal delay-1">
-            <img src="assets/buttersquids2.jpg" alt="Butter Squids">
+            <img src="assets/buttersquids2.jpg" srcset="assets/buttersquids2-480.webp 480w, assets/buttersquids2-960.webp 960w, assets/buttersquids2-1440.webp 1440w" sizes="(max-width:650px) 100vw, 33vw" alt="Butter Squids" loading="lazy" decoding="async">
             <h3>Butter Squids</h3>
             <p>Tender squid in a rich buttery Goan-style preparation.</p>
             <button class="text-link" data-item="Butter Squids|Tender squid in a rich buttery preparation — a Blue Heaven favourite for seafood lovers.|assets/buttersquids2.jpg">Discover Dish</button>
           </article>
           <article class="favourite-card short extra">
-            <img src="assets/place-08.jpg" alt="Sports night">
+            <img src="assets/place-08.jpg" alt="Sports night" loading="lazy" decoding="async">
             <h3>Music & Sports Evenings</h3>
             <p>Good food, drinks and a lively atmosphere after dark.</p>
             <button class="text-link" data-item="Music & Sports Evenings|Settle in with your group, order the table a few favourites and enjoy Blue Heaven’s relaxed evening atmosphere.|assets/place-08.jpg">Explore</button>
@@ -269,13 +272,13 @@
 
         <div class="favourite-column">
           <article class="favourite-card short reveal delay-2">
-            <img src="assets/FL-4.jpg" alt="Food and drink at Blue Heaven">
+            <img src="assets/FL-4.jpg" srcset="assets/FL-4-480.webp 480w, assets/FL-4-960.webp 960w, assets/FL-4-1440.webp 1440w" sizes="(max-width:650px) 100vw, 33vw" alt="Food and drink at Blue Heaven" loading="lazy" decoding="async">
             <h3>Fresh Catch & Drinks</h3>
             <p>Coastal favourites and something chilled on the side.</p>
             <button class="text-link" data-item="Fresh Catch & Drinks|Daily seafood specials bring the coast to the table, paired with refreshing drinks for an easy Goan meal.|assets/FL-4.jpg">Discover</button>
           </article>
           <article class="favourite-card deep extra">
-            <img src="assets/place-04.jpg" alt="Blue Heaven dining">
+            <img src="assets/place-04.jpg" alt="Blue Heaven dining" loading="lazy" decoding="async">
             <h3>Family & Group Dining</h3>
             <p>A relaxed room for long lunches, dinners and get-togethers.</p>
             <button class="text-link" data-item="Family & Group Dining|Blue Heaven is built for shared tables, family dinners and casual celebrations with your whole crew.|assets/place-04.jpg">Explore</button>
@@ -379,7 +382,7 @@
     </div>
   </div>
 
-  <div class="lightbox" id="lightbox"><button class="lightbox-close">×</button><img alt="Blue Heaven gallery image"></div>
+  <div class="lightbox" id="lightbox"><button class="lightbox-close">×</button><img alt="Blue Heaven gallery image" loading="lazy" decoding="async"></div>
 
   <script src="script.js"></script>
 </body>
